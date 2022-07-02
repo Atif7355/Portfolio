@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>Feedback</title>
+     <style>
+     h2{
+    background-color:darkgrey;
+    color:darkolivegreen;
+    text-align:center;
+}
+header{
+    background-color:darkgrey;
+    margin:0;
+    padding:0;
+}
+.feed{
+    color:maroon;
+    float:left;
+}
+.feed2{
+    color:maroon;
+    float:right;
+}
+.feed3{
+clear: both;
+}
+.split{
+    height:69.5%;
+    width:45.45%;
+    position:fixed;
+    padding-top:30px;
+    padding-left:20px;
+    padding-bottom:20px;
+    padding-right:20px;
+    clear:both;
+}
+.left{
+    left:0;
+    background-color:lightcyan;
+    border:15px solid red;
+}
+.right{
+    right:0;
+    background-color:linen;
+    border:15px solid green; 
+}
+input[type=suggestion],select{
+    width:50%;
+    border-radius:4px;
+    box-sizing:border-box;
+    padding-bottom:30px;
+}
+button{
+    background-color:darkblue;
+    border:none;
+    color:white;
+    padding:15px 32px;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    font-size:16px;
+    margin:4px 2px;
+    cursor:pointer;
+}
+     </style>
+     <script>
+     function Clear() {
+    document.getElementById("fname").value="";
+    document.getElementById("mname").value="";
+    document.getElementById("lname").value="";
+    document.querySelector('input[name="gender"]:checked').checked=false;
+    document.getElementById("suggestion").value="";
+}
+function input() {
+    var fname=document.getElementById("fname").value;
+    var midname=document.getElementById("mname").value;
+    var lastname=document.getElementById("lname").value;
+   var Gender=document.querySelector('input[name="gender"]:checked').value;
+   
+    var feedback=document.getElementById("mytest").value;
+    var suggestion=document.getElementById("suggestion").value;
+    var d=new Date();
+    if (fname=="") {
+        alert("Please inpur your first name. ");
+    }
+    else if (lastname=="")
+    {
+        alert("Please inpur your last name. ");
+    }
+    else if (fname.length>40||midname.length>40||lastname.length>40)
+    {
+        alert("Please inpur your name in 40 char ");
+    }
+    else{
+        if (midname.trim()==""){
+            var name=Gender+" "+fname.trim()+" "+lastname.trim();
+        }
+        else {
+            name=Gender+" "+fname.trim()+" "+midname.trim()+" "+lastname.trim();
+            }
+    } 
+    feedback+="\n"+"Name: "+name+"\n"+"Suggestion: "+suggestion+"\n"+d;
+    document.getElementById("mytest").value=feedback;
+   
+
+}
+     </script>
+    </head>
+    <body>
+       
+        <header>    
+            <div class="feed">
+                <h1 class="feed">Feedback</h1>
+            </div>
+            <div class="feed2">
+                <h1 class="feed2">Your Thoughts Matter</h1>
+            </div>    
+            <div class="feed3"></div>
+        </header><br><br>
+                    <div class="split left">
+                        <div class="centered">
+                   <form>
+                <label for="fname"><b>First Name:</b></label>
+                <br>
+                <input type="text" id="fname" name="fname" placeholder="Enter first name">
+                <br>
+                <label for="mname"><b>Middle Name:</b></label>
+                <br>
+                <input type="text" id="mname" name="mname" placeholder="Enter middle name">
+                <br>
+                <label for="lname"><b>Last Name:</b></label>
+                <br>
+                <input type="text" id="lname" name="lname" placeholder="Enter last name">
+                <br>
+                <label for="Gender"><b>Gender:</b></label>
+                <br>
+                <input type="radio" id="gender" name="gender" value="Mr.">
+                <label for="male"><b>Male</b></label>
+                <input type="radio" id="gender" name="gender" value="Ms.">
+                <label for="female"><b>Female</b></label>
+                <br>
+                <label for="suggestion"><b>Suggestions:</b></label>
+                <br>
+                <input type="suggestion" id="suggestion" name="suggestion">
+                <br>
+                <button type="button" onclick="input()">Submit</button>
+                <button type="button" onclick="Clear()">Reset</button>
+            </form>
+</div>
+</div>
+        
+        <div class="split right">
+            <div class="centered">
+                <article class="feed">
+                    <h1>Feedback and Suggestions</h1>
+                    <textarea cols="55" rows="14" id="mytest" maxlength="0"></textarea>
+                </article>
+            </div>
+        </div>
+
+
+    </body>
+</html>

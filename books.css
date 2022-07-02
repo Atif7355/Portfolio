@@ -1,0 +1,53 @@
+
+h1
+{
+	text-align:center;
+	padding:20px;
+	background-color:chartreuse;
+	font-family:Lucida Handwriting;
+	font-weight:bold;
+	color:magenta;
+}
+div.Description
+{
+	/*background-color:#b8b894;*/
+	height:400px;
+	width:67%;
+	position:relative;
+	left:400px;
+	
+	
+}
+img
+{
+	position:relative;
+	width:250px;
+	height:200px;
+	vertical-align:bottom;
+}
+
+p
+{
+	font-size:20pt;
+	text-decoration-color:maroon;
+	
+}
+h2
+{
+    background-color:cyan;
+    color:navy;
+    text-align:center;
+} 
+body {
+  background-image: url('background.jpeg');
+}
+.footer {
+	text-align: center;
+	padding:2px;
+	background-color: Grey;
+	color: white;
+	position:relative;
+	width:100%;
+	margin:0;
+	bottom:0;
+  }
